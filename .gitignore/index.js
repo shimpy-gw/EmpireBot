@@ -19,7 +19,6 @@ var bot = new Discord.Client();
 var servers = {};
 
 bot.on("ready", function() {
-    bot.user.setGame("Démarrage en cours")
     bot.user.setStatus(`dnd`)
     bot.user.setPresence({ game: { name: "Games World | g-info", url: "https://www.twitch.tv/shimpyishere", type: 1 } })
     console.log("Ready");
