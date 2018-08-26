@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
 
+const TOKEN = process.env.token;
 const PREFIX = "g-";
 
 var bot = new Discord.Client();
