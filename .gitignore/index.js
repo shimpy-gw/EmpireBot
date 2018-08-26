@@ -44,6 +44,8 @@ bot.on("message", function(message) {
             break;
         case "help":
             var embed = new Discord.RichEmbed()
+                .setTitle("Games World")
+                .setDescription(".")
                 .setTitle("Membres")
                 .setDescription("`8ball` - Réponses aléatoires")
                 .setDescription("`ping` - Le bot répond 'pong'")
