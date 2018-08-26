@@ -44,7 +44,8 @@ bot.on("message", function(message) {
             break;
         case "help":
             var embed = new Discord.RichEmbed()
-                .setTitle("test")
+                .setTitle("Liste des commandes disponibles :")
+                .setColor("#01AEE3")
             message.channel.sendEmbed(embed);
     }
 });
