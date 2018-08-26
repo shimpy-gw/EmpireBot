@@ -51,7 +51,6 @@ bot.on("message", function(message) {
                 .setFooter("Games World | by Shimpy#9999")
                 .setThumbnail(message.author.avatarURL)
             message.channel.sendEmbed(embed);
-            break;
     }
 });
 
