@@ -44,12 +44,14 @@ bot.on("message", function(message) {
             break;
         case "help":
             var embed = new Discord.RichEmbed()
-                .addField("Membres", "`8ball` - Réponses aléatoires", "`ping` - Le bot répond 'pong'", "`info` - Avoir des informations")
+                .addTitle("Membres")
+                .addDescription("`8ball` - Réponses aléatoires", "`ping` - Le bot répond 'pong'", "`info` - Avoir des informations")
                 .addField("Liens", "[Lien du serveur discord](https://discord.gg/h5aRW32)")
                 .setColor("#01AEE3")
                 .setFooter("Games World | by Shimpy#9999")
                 .setThumbnail(message.author.avatarURL)
             message.channel.sendEmbed(embed);
+            break;
     }
 });
 
