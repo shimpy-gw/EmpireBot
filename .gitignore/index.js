@@ -47,13 +47,13 @@ bot.on("message", function(message) {
                 .setTitle("Games World")
                 .setDescription("Voici la liste des commandes disponibles")
                 .setTitle("Membres")
-                .setField("`8ball` - Réponses aléatoires")
-                .setField("`ping` - Le bot répond 'pong'")
-                .setField("`info` - Avoir des informations")
-                .setFooter("Vous avez une question ? | Adressez-vous à un administrateur")
+                .addField("`8ball` - Réponses aléatoires")
+                .addField("`ping` - Le bot répond 'pong'")
+                .addField("`info` - Avoir des informations")
                 .setColor("#01AEE3")
+                .setFooter("Vous avez une question ? | Adressez-vous à un administrateur")
+                .setThumbnail(message.author.avatarURL)
             message.channel.sendEmbed(embed);
-            break;
     }
 });
 
