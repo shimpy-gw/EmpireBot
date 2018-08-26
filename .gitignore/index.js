@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const YTDL = require("ytdl-core");
 
 const PREFIX = "g-";
 
@@ -14,19 +13,6 @@ var fortunes = [
    "Je ne sais pas"
 ];
 
-
-function play(connection, message) {
-    var server = servers[message.guild.id];
-
-    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
-
-    server.queue.shift();
-
-    server.dispatcher.on("end", function() {
-        if (server.queue[0]) play(connection, message);
-        else connection.disconnect();
-    });
-}
 
 var bot = new Discord.Client();
 
@@ -56,39 +42,7 @@ bot.on("message", function(message) {
             if (args [1]) message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
             else message.channel.sendMessage("Je ne peut pas lire ton message");
             break;
-        case "play":
-            if (!args[1]) {
-                message.channel.sendMessage("Merci de mettre un lien pour pouvoir écouter de la musique.");
-                return;
-            }
 
-            if (!message.member.voiceChannel) {
-                message.channel.sendMessage("Vous devez être dans un salon vocal.");
-                return;
-            }
-
-            if(!servers[message.guild.id]) servers[message.guild.id] = {
-                queue: []
-            };
-
-            var server = servers[message.guild.id];
-
-            server.queue.push(args[1]);
-
-            if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
-                play(connection, message);
-            });
-            break;
-        case "skip":
-           var server = servers[message.guild.id];
-           
-           if (server.dispatcher) server.dispatcher.end();
-           break;
-        case "stop":
-           var server = servers[message.guild.id];
-
-           if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-           break;
     }
 });
 
@@ -142,4 +96,5 @@ bot.on("message", function(message) {
 
 
 bot.login(process.env.TOKEN);
+
 
