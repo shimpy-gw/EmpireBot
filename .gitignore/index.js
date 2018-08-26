@@ -46,7 +46,7 @@ bot.on("message", function(message) {
             var embed = new Discord.RichEmbed()
                 .addTitle("Membres")
                 .addDescription("`8ball` - Réponses aléatoires")
-                .addDescription("`ping` - Le bot répond 'pong'"
+                .addDescription("`ping` - Le bot répond 'pong'")
                 .addField("Liens", "[Lien du serveur discord](https://discord.gg/h5aRW32)")
                 .setColor("#01AEE3")
                 .setFooter("Games World | by Shimpy#9999")
