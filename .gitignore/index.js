@@ -48,9 +48,9 @@ bot.on("message", function(message) {
                 .setDescription("`8ball` - Réponses aléatoires")
                 .setDescription("`ping` - Le bot répond 'pong'")
                 .setDescription("`info` - Avoir des informations")
-                .addField("Liens", "[Serveur Discord](https://discord.gg/h5aRW32)")
                 .setColor("#01AEE3")
                 .setFooter("Games World | by Shimpy#9999")
+                .addField("Liens", "[Lien du serveur discord](https://discord.gg/h5aRW32)")
                 .setThumbnail(message.author.avatarURL)
             message.channel.sendEmbed(embed);
     }
