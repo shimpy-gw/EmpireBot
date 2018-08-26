@@ -42,7 +42,7 @@ bot.on("message", function(message) {
             if (args [1]) message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
             else message.channel.sendMessage("Je ne peut pas lire ton message");
             break;
-        case "help"
+        case "help":
             var embed = new Discord.RichEmbed()
                 .setTitle("test")
             message.channel.sendEmbed(embed);
