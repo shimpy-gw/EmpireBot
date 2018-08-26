@@ -44,7 +44,12 @@ bot.on("message", function(message) {
             break;
         case "help":
             var embed = new Discord.RichEmbed()
-                .setTitle("Liste des commandes disponibles :")
+                .setTitle("Games World")
+                .setTitle("Membres")
+                .setDescription("``8ball` | Réponses aléatoires")
+                .setDescription("``ping` | Le bot répond 'pong'")
+                .setDescription("``info` | Avoir des informations")
+                .setFooter("Games World | https://discord.gg/h5aRW32")
                 .setColor("#01AEE3")
             message.channel.sendEmbed(embed);
     }
