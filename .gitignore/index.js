@@ -44,14 +44,13 @@ bot.on("message", function(message) {
             break;
         case "help":
             var embed = new Discord.RichEmbed()
-                .setTitle("Games World")
-                .setDescription("Voici la liste des commandes disponibles")
                 .setTitle("Membres")
-                .addField("`8ball` - Réponses aléatoires")
-                .addField("`ping` - Le bot répond 'pong'")
-                .addField("`info` - Avoir des informations")
+                .setDescription("`8ball` - Réponses aléatoires")
+                .setDescription("`ping` - Le bot répond 'pong'")
+                .setDescription("`info` - Avoir des informations")
+                .addField("Liens", "[Serveur Discord](https://discord.gg/h5aRW32)")
                 .setColor("#01AEE3")
-                .setFooter("Vous avez une question ? | Adressez-vous à un administrateur")
+                .setFooter("Games World | by Shimpy#9999")
                 .setThumbnail(message.author.avatarURL)
             message.channel.sendEmbed(embed);
     }
