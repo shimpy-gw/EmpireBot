@@ -21,7 +21,7 @@ var servers = {};
 bot.on("ready", function() {
     bot.user.setStatus("DnD")
     bot.user.setGame("Démarrage en cours")
-    bot.user.setStatus("Online")
+    bot.user.setStatus("DnD")
     bot.user.setPresence({ game: { name: "Games World | g-info", url: "https://www.twitch.tv/shimpyishere", type: 1 } })
     console.log("Ready");
 });
