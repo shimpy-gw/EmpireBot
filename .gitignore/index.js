@@ -19,7 +19,7 @@ var bot = new Discord.Client();
 var servers = {};
 
 bot.on("ready", function() {
-    bot.user.setPresence({ game: { name: "Games World | g-info", url: "https://www.twitch.tv/shimpyishere", type: 1 } })
+    bot.user.setPresence({ game: { name: "Games World | g-help", url: "https://www.twitch.tv/shimpyishere", type: 1 } })
     console.log("Ready");
 });
 
