@@ -42,16 +42,6 @@ bot.on("message", function(message) {
             if (args [1]) message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
             else message.channel.sendMessage("Je ne peut pas lire ton message");
             break;
-        case "help":
-            var embed = new Discord.RichEmbed()
-                .addTitle("Membres")
-                .addDescription("`8ball` - Réponses aléatoires")
-                .addDescription("`ping` - Le bot répond 'pong'"
-                .addField("Liens", "[Lien du serveur discord](https://discord.gg/h5aRW32)")
-                .setColor("#01AEE3")
-                .setFooter("Games World | by Shimpy#9999")
-                .setThumbnail(message.author.avatarURL)
-            message.channel.sendEmbed(embed);
     }
 });
 
