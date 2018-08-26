@@ -23,10 +23,6 @@ bot.on("ready", function() {
     console.log("Ready");
 });
 
-bot.on("guildMemberAdd", member => {
-   member.guild.channels.find("name", "join").send(`Bienvenue {user}, sur le serveur discord **{server}** 🎉🤗 !`, `__**Ce discord réuni plusieurs communautés de Gameurs, afin de s'amuser et d'en découvrir également !**__`)
-})
-
 bot.on("message", function(message) {
     
     if (message.author.equals(bot.user)) return;
