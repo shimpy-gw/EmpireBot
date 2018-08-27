@@ -20,7 +20,7 @@ var servers = {};
 
 bot.on("ready", function() {
     bot.user.setPresence({ game: { name: "Games World | ;help", url: "https://www.twitch.tv/shimpyishere", type: 1 } })
-    bot.user.setStatus("idle");
+    bot.user.setStatus("dnd");
     console.log("Ready");
 });
 
