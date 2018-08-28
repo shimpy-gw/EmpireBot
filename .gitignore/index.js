@@ -20,6 +20,7 @@ var servers = {};
 
 bot.on("ready", function() {
     bot.user.setPresence({ game: { name: "Games World | ;help", url: "https://www.twitch.tv/shimpyishere", type: 1 } })
+    bot.user.setStatus("idle");
     console.log("Ready");
 });
 
@@ -45,7 +46,7 @@ bot.on("message", function(message) {
         case "help":
             var embed = new Discord.RichEmbed()
                 .addField("Fun", "`8ball` - Réponses aléatoires")
-                .addField("Autres", "`info` - Avoir des informations \n `ping` - Temps de latence entre vous et le serveur ")
+                .addField("Autres", "`info` - Avoir des informations \n `ping` - Votre ping entre vous et le serveur ")
                 .addField("Liens", "[Chaîne de Momo](https://www.youtube.com/channel/UCPM0ideFVNEDArbwSpGe6Ew) \n [Chaîne de Shimpy](https://www.youtube.com/channel/UC3qkGuSTC7dxMaS6KE_AGuQ) \n [Lien du serveur discord](https://discord.gg/h5aRW32)")
                 .setAuthor("Games World", "https://images-ext-1.discordapp.net/external/JYr7pb9AhR6DgG3SiBwlNwUm62FWK2eCOY8E7sWOHi0/https/discordapp.com/api/guilds/460036787080003585/icons/feb3efde418f21cb67184eee6b827cc5.jpg")
                 .setColor("#01AEE3")
@@ -54,6 +55,61 @@ bot.on("message", function(message) {
                 .setTimestamp()
             message.channel.sendEmbed(embed);
             break;
+        case "kick":
+            if (!message.channel.permissionsFor(message.member).hasPermission("KICK_MEMBERS")) {
+            var embed = new Discord.RichEmbed()
+                .setTitle("Erreur")
+                .setDescription("Tu ne possèdes pas la permission de kick !")
+                .setAuthor("Games World", "https://images-ext-1.discordapp.net/external/JYr7pb9AhR6DgG3SiBwlNwUm62FWK2eCOY8E7sWOHi0/https/discordapp.com/api/guilds/460036787080003585/icons/feb3efde418f21cb67184eee6b827cc5.jpg")
+                .setColor("#B9121B")
+                .setFooter("Crée par Shimpy#9999")
+                .setTimestamp()
+            message.channel.sendEmbed(embed);
+        }else{ 
+            var member = message.mentions.member.firsts();
+            if(!member) {
+               var embed = new Discord.RichEmbed()
+                   .setTitle("Erreur")
+                   .setDescription("L'utilisateur n'éxiste pas !")
+                   .setAuthor("Games World", "https://images-ext-1.discordapp.net/external/JYr7pb9AhR6DgG3SiBwlNwUm62FWK2eCOY8E7sWOHi0/https/discordapp.com/api/guilds/460036787080003585/icons/feb3efde418f21cb67184eee6b827cc5.jpg")
+                   .setColor("#B9121B")
+                   .setFooter("Crée par Shimpy#9999")
+                   .setTimestamp()
+               message.channel.sendEmbed(embed);
+        }else{
+            if(!member.kickable){
+                var embed = new Discord.RichEmbed()
+                    .setTitle("Erreur")
+                    .setDescription("Impossible de kick l'utilisateur")
+                    .setAuthor("Games World", "https://images-ext-1.discordapp.net/external/JYr7pb9AhR6DgG3SiBwlNwUm62FWK2eCOY8E7sWOHi0/https/discordapp.com/api/guilds/460036787080003585/icons/feb3efde418f21cb67184eee6b827cc5.jpg")
+                    .setColor("#B9121B")
+                    .setFooter("Crée par Shimpy#9999")
+                    .setTimestamp()
+                message.channel.sendEmbed(embed);
+        }else{
+            member.kick().then((member) => {
+                var embed = new Discord.RichEmbed()
+                    .setTitle("Succès")
+                    .setDescription(`${member.displayName} à été kick avec succès !`)
+                    .setAuthor("Games World", "https://images-ext-1.discordapp.net/external/JYr7pb9AhR6DgG3SiBwlNwUm62FWK2eCOY8E7sWOHi0/https/discordapp.com/api/guilds/460036787080003585/icons/feb3efde418f21cb67184eee6b827cc5.jpg")
+                    .setColor("#96CA2D")
+                    .setFooter("Crée par Shimpy#9999")
+                    .setTimestamp()
+                message.channel.sendEmbed(embed);
+            }).catch(() => {
+                var embed = new Discord.RichEmbed()
+                    .setTitle("Erreur")
+                    .setDescription("Le kick à été refusé !")
+                    .setAuthor("Games World", "https://images-ext-1.discordapp.net/external/JYr7pb9AhR6DgG3SiBwlNwUm62FWK2eCOY8E7sWOHi0/https/discordapp.com/api/guilds/460036787080003585/icons/feb3efde418f21cb67184eee6b827cc5.jpg")
+                    .setColor("#B9121B")
+                    .setFooter("Crée par Shimpy#9999")
+                    .setTimestamp()
+                message.channel.sendEmbed(embed);
+            })
+            }
+        }
+        }
+        break;
     }
 });
 
