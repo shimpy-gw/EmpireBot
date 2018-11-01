@@ -20,7 +20,7 @@ var servers = {};
 
 bot.on("ready", function() {
     bot.user.setPresence({ game: { name: "Bounce Universe | ;help", url: "https://www.twitch.tv/shimpyishere", type: 1 } })
-    bot.user.setStatus("idle");
+    bot.user.setStatus("online");
     console.log("Ready");
 });
 
