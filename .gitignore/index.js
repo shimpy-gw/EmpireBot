@@ -48,7 +48,7 @@ bot.on("message", function(message) {
                 .addField("Fun", "`8ball` - Réponses aléatoires")
                 .addField("Autres", "`info` - Avoir des informations \n `ping` - Votre ping entre vous et le serveur ")
                 .addField("Liens", "[Chaîne de Momo](https://www.youtube.com/channel/UCPM0ideFVNEDArbwSpGe6Ew) \n [Chaîne de Shimpy](https://www.youtube.com/channel/UC3qkGuSTC7dxMaS6KE_AGuQ) \n [Lien du serveur discord](https://discord.gg/h5aRW32)")
-                .setAuthor("Games World", "https://images-ext-1.discordapp.net/external/JYr7pb9AhR6DgG3SiBwlNwUm62FWK2eCOY8E7sWOHi0/https/discordapp.com/api/guilds/460036787080003585/icons/feb3efde418f21cb67184eee6b827cc5.jpg")
+                .setAuthor("Bounce Universe", "https://cdn.discordapp.com/attachments/498887420134031380/507520583731380224/logo-bu.png")
                 .setColor("#01AEE3")
                 .setFooter("Crée par Shimpy#9999")
                 .setThumbnail(message.author.avatarURL)
