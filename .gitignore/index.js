@@ -19,7 +19,7 @@ var bot = new Discord.Client();
 var servers = {};
 
 bot.on("ready", function() {
-    bot.user.setPresence({ game: { name: "Bounce Universe | ;help", url: "https://www.twitch.tv/shimpyishere", type: 1 } })
+    bot.user.setPresence({ game: { name: "World Of Cartoons | ;help", url: "https://www.twitch.tv/shimpyishere", type: 1 } })
     bot.user.setStatus("online");
     console.log("Ready");
 });
@@ -41,16 +41,16 @@ bot.on("message", function(message) {
             break;
         case "8ball":
             if (args [1]) message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
-            else message.channel.sendMessage("Je ne peut pas lire ton message");
+            else message.channel.sendMessage("Je ne peux pas lire ton message");
             break;
         case "help":
             var embed = new Discord.RichEmbed()
                 .addField("Fun", "`8ball` - Réponses aléatoires")
                 .addField("Autres", "`info` - Avoir des informations \n `ping` - Votre ping entre vous et le serveur ")
-                .addField("Liens", "[Chaîne de Momo](https://www.youtube.com/channel/UCPM0ideFVNEDArbwSpGe6Ew) \n [Chaîne de Shimpy](https://www.youtube.com/channel/UC3qkGuSTC7dxMaS6KE_AGuQ) \n [Lien du serveur discord](https://discord.gg/h5aRW32)")
-                .setAuthor("Bounce Universe", "https://cdn.discordapp.com/attachments/498887420134031380/507520583731380224/logo-bu.png")
+                .addField("Liens", "[Chaîne de Momo](https://www.youtube.com/channel/UCPM0ideFVNEDArbwSpGe6Ew) \n [Chaîne de Shimpy](https://www.youtube.com/channel/UCcz7JCXFEmFPF-nfZDT6CIg?view_as=subscriber) \n [Lien du serveur discord](https://discord.gg/SqNjrYj)")
+                .setAuthor("World Of Cartoons", "https://cdn.discordapp.com/attachments/461888039405486090/558985612640911363/dddd.png")
                 .setColor("#01AEE3")
-                .setFooter("Crée par Shimpy#9999")
+                .setFooter("Crée par Shimpy#0001")
                 .setThumbnail(message.author.avatarURL)
                 .setTimestamp()
             message.channel.sendEmbed(embed);
