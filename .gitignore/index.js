@@ -19,7 +19,7 @@ var bot = new Discord.Client();
 var servers = {};
 
 bot.on("ready", function() {
-    bot.user.setPresence({ game: { name: "World Of Cartoons | ;help", url: "https://www.twitch.tv/shimpyishere", type: 1 } })
+    bot.user.setPresence({ game: { name: "World Of Cartoon | ;help", url: "https://www.twitch.tv/shimpyishere", type: 1 } })
     bot.user.setStatus("online");
     console.log("Ready");
 });
@@ -49,7 +49,7 @@ bot.on("message", function(message) {
                 .addField("Autres", "`info` - Avoir des informations \n `ping` - Votre ping entre vous et le serveur ")
                 .addField("Liens", "[Chaîne de Momo](https://www.youtube.com/channel/UCPM0ideFVNEDArbwSpGe6Ew) \n [Chaîne de Shimpy](https://www.youtube.com/channel/UCcz7JCXFEmFPF-nfZDT6CIg?view_as=subscriber) \n [Lien du serveur discord](https://discord.gg/SqNjrYj)")
                 .setAuthor("World Of Cartoon", "https://cdn.discordapp.com/attachments/461888039405486090/558985612640911363/dddd.png")
-                .setColor("#333333")
+                .setColor("#7289d9")
                 .setFooter("Crée par Shimpy#0001")
                 .setThumbnail(message.author.avatarURL)
                 .setTimestamp()
